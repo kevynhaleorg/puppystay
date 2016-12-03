@@ -1,0 +1,271 @@
+@import './colors';
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+$border: $d3;
+
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#afc683+0,b7c1a2+100 */
+background: #afc683; /* Old browsers */
+background: -moz-linear-gradient(top,  #afc683 0%, #b7c1a2 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #afc683 0%,#b7c1a2 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #afc683 0%,#b7c1a2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afc683', endColorstr='#b7c1a2',GradientType=0 ); /* IE6-9 */
+
+	color:$a5;
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+
+}
+
+div.upper-logo {
+	position: absolute;
+	top:10px;
+	left:10px;
+	line-height: 40px;
+
+
+
+	div.logo-image {
+
+		display: inline-block;
+		height:40px;
+		width: 40px;
+		border-radius:40px;
+
+	}
+	div.logo-image::after {
+	      content: "";
+    background-image: url(images/logo2.jpg);
+    //background-size: 200px;
+    background-position: center;
+    opacity: .4;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-size:70px;
+    border-radius: 40px;
+    /* top: 0; */
+    left: 0;
+    /* bottom: 0; */
+    right: 0;
+    display: inline-block;
+    /* position: absolute; */
+    /* z-index: -1; */
+    z-index: 5;  
+	}
+
+	span {
+		font-size: 30px;
+    	position: relative;
+    	top: -10px;
+    	font-family: Indie Flower, cursive;
+
+	}
+}
+
+div.house-body {
+	position: relative;
+	top: -480px;
+	width: 50%;
+	height:325px;
+	margin: 225px auto;
+	border-right: 5px solid $border;
+	border-left: 5px solid $border;
+	border-bottom: 5px solid $border;
+	background-color: $c1;
+	z-index:5;
+}
+div.back-cover {
+	position:absolute;
+	background-color: $d2;
+	top: 20px;
+    width: 100%;
+    z-index: 4;
+    margin: 225px auto;
+    height: 200px;
+}
+
+div.roof-base-top {
+	position:relative;
+	width: calc(50% + 30px);
+	height:30px;
+	margin: 215px auto;
+	border-bottom: 5px solid $border;
+	z-index: 3;
+	top: -1070px;
+}
+
+div.roof-base {
+	position:relative;
+	width: calc(50% + 50px);
+	height:30px;
+	margin: 215px auto;
+	border-bottom: 5px solid $border;
+	z-index: 3;
+}
+div.roof-base:after {
+    content: "";
+    position: absolute;
+    top:30px; left: 0;
+    background-color:$border;
+    padding-bottom:50%; width:57.7%;
+    z-index:1;
+    
+    -webkit-transform-origin:0 0;
+    -ms-transform-origin:0 0;
+    transform-origin:0 0;
+    
+    -webkit-transform: rotate(-30deg) skewX(30deg);;
+    -ms-transform: rotate(-30deg) skewX(30deg);
+    transform: rotate(-30deg) skewX(30deg);
+}
+div.roof-base-inside {
+	position:relative;
+	width: 50%;
+	height:30px;
+	margin: 215px auto;
+	border-bottom: 5px solid transparent;
+	z-index: 3;
+}
+
+div.roof-base-inside:after {
+    content: "";
+    position: absolute;
+    top:-225px; left: 0;
+    background-color:$c2;
+    padding-bottom:50%; width:57.7%;
+    z-index:2;
+    
+    -webkit-transform-origin:0 0;
+    -ms-transform-origin:0 0;
+    transform-origin:0 0;
+    
+    -webkit-transform: rotate(-30deg) skewX(30deg);;
+    -ms-transform: rotate(-30deg) skewX(30deg);
+    transform: rotate(-30deg) skewX(30deg);
+}
+
+div.visit-button {
+	position: absolute;
+    width: 160px;
+    height: 50px;
+    left: 50%;
+    margin-left: -80px;
+    top: 500px;
+    background-color: #568439;
+    color: white;
+    z-index: 7;
+    font-size: 40px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    line-height: 50px;
+    //box-shadow: 0px 0px 5px #092b0b;
+    //text-shadow: 0px 0px 3px $b5;
+    //border: 1px solid white;
+
+    &:hover {
+    	cursor: pointer;
+    	//box-shadow: 0px 0px 10px #092b0b;
+    	
+    }
+}
+
+div.puppy-logo {
+	position: absolute;
+    width: 450px;
+    height: 50px;
+    left: 50%;
+    margin-left: -225px;
+    top: 270px;
+    color: $border;
+    z-index: 7;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;;
+    font-weight: bold;
+    border-radius: 5px;
+    line-height: 50px;
+    //text-shadow: 0px 0px 3px $b5;
+
+    div.logo {
+    	height: 200px;
+    	width: 200px;
+    	
+    	border-radius: 100px;
+    	border: 2px solid #d3d48c;
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: #fdfecb;
+    box-shadow:inset 0px 0px 10px #797764;
+
+    	
+
+    }
+    div.logo::after {
+	      content: "";
+    background-image: url(images/logo2.jpg);
+    //background-size: 200px;
+    background-position: center;
+    opacity: 0.5;
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    /* top: 0; */
+    left: 0;
+    /* bottom: 0; */
+    right: 0;
+    display: inline-block;
+    /* position: absolute; */
+    /* z-index: -1; */
+    z-index: 5;  
+	}
+
+	
+
+}
+
+div.ground {
+		position: absolute;
+		width: 100%;
+		height: 200px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#32701e+0,8da363+100 */
+background: #32701e; /* Old browsers */
+background: -moz-linear-gradient(top,  #32701e 0%, #8da363 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #32701e 0%,#8da363 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #32701e 0%,#8da363 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32701e', endColorstr='#8da363',GradientType=0 ); /* IE6-9 */
+
+		top: 500px;
+	}
+
+
+@media screen and (max-width: 500px) {
+
+	div.puppy-logo {
+		top: 300px;
+		div.logo {
+			height: 125px;
+			width: 125px;
+		}
+		div.logo::after {
+			height: 125px;
+			width: 125px;
+			background-size:225px;
+
+		}
+
+	}
+
+
+}
+
+

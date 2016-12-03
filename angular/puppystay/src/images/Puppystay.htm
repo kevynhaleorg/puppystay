@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:4200/puppies -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Puppystay</title>
+  <!--<base href="/">--><base href=".">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="http://localhost:4200/images/logo2.jpg">
+  <link href="./Puppystay_files/icon" rel="stylesheet">
+<style type="text/css">/* You can add global styles to this file, and also import other style files */
+</style><style></style><style>div.coverall[_ngcontent-lkm-3] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 14;
+  background-color: #698238;
+  opacity: .7;
+  display: none; }
+
+div.body[_ngcontent-lkm-3] {
+  position: absolute;
+  top: 60px;
+  height: calc(100% - 60px);
+  width: 100%;
+  background-color: #DDEDBD; }
+  div.body[_ngcontent-lkm-3]   div.body-inner[_ngcontent-lkm-3] {
+    display: flex;
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px); }
+    div.body[_ngcontent-lkm-3]   div.body-inner[_ngcontent-lkm-3]   div.body-section[_ngcontent-lkm-3] {
+      flex: 1 1 auto;
+      background-color: white;
+      border-radius: 5px;
+      height: calc(100% - 20px);
+      margin: 10px;
+      box-shadow: 0px 0px 10px #8AA557; }
+      div.body[_ngcontent-lkm-3]   div.body-inner[_ngcontent-lkm-3]   div.body-section.list[_ngcontent-lkm-3] {
+        flex: 1 1 25%; }
+      div.body[_ngcontent-lkm-3]   div.body-inner[_ngcontent-lkm-3]   div.body-section[_ngcontent-lkm-3]   .body-section-inner[_ngcontent-lkm-3] {
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        padding: 5px;
+        position: relative; }
+        div.body[_ngcontent-lkm-3]   div.body-inner[_ngcontent-lkm-3]   div.body-section[_ngcontent-lkm-3]   .body-section-inner[_ngcontent-lkm-3]   .close[_ngcontent-lkm-3] {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          padding: 3px;
+          font-family: sans-serif;
+          background-color: #DDEDBD;
+          height: 24px;
+          width: 24px;
+          text-align: center;
+          line-height: 24px;
+          color: #7b8b5c;
+          border-top-right-radius: 5px;
+          border: 1px solid transparent; }
+          div.body[_ngcontent-lkm-3]   div.body-inner[_ngcontent-lkm-3]   div.body-section[_ngcontent-lkm-3]   .body-section-inner[_ngcontent-lkm-3]   .close[_ngcontent-lkm-3]:hover {
+            border: 1px solid #8AA557; }
+
+div.search[_ngcontent-lkm-3]   i[_ngcontent-lkm-3] {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 30px;
+  color: #7b8b5c; }
+
+div.search[_ngcontent-lkm-3]   input[_ngcontent-lkm-3] {
+  width: calc(100% - 42px);
+  border: 0px;
+  border-bottom: 1px solid #8AA557;
+  padding: 0px;
+  height: 35px;
+  padding-left: 40px;
+  outline: none;
+  font-size: 30px;
+  font-weight: 300;
+  color: #506B1D;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px; }
+  div.search[_ngcontent-lkm-3]   input[_ngcontent-lkm-3]:focus {
+    background-color: #A0C9A3; }
+
+@media screen and (max-width: 700px) {
+  div#child-route[_ngcontent-lkm-3] {
+    position: absolute;
+    flex: none;
+    top: -30px;
+    width: 450px;
+    left: 50%;
+    margin-left: -225px;
+    z-index: 15;
+    box-shadow: 0px 0px 20px #506B1D; }
+  div.coverall[_ngcontent-lkm-3] {
+    display: block; } }
+
+@media screen and (max-width: 500px) {
+  div#child-route[_ngcontent-lkm-3] {
+    width: 300px;
+    margin-left: -150px; } }</style><style>@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+nav[_ngcontent-lkm-4] {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: #afc683;
+  color: #506B1D; }
+
+div.upper-logo[_ngcontent-lkm-4] {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  line-height: 40px;
+  z-index: 10; }
+  div.upper-logo[_ngcontent-lkm-4]   div.logo-image[_ngcontent-lkm-4] {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px; }
+  div.upper-logo[_ngcontent-lkm-4]   div.logo-image[_ngcontent-lkm-4]::after {
+    content: "";
+    background-image: url(images/logo2.jpg);
+    background-position: center;
+    opacity: .4;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-size: 70px;
+    border-radius: 40px;
+    
+    left: 0;
+    
+    right: 0;
+    display: inline-block;
+    
+    
+    z-index: 5; }
+  div.upper-logo[_ngcontent-lkm-4]   span[_ngcontent-lkm-4] {
+    font-size: 30px;
+    position: relative;
+    top: -10px;
+    font-family: Indie Flower, cursive; }
+
+div.create[_ngcontent-lkm-4] {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  font-size: 45px;
+  border-radius: 50px;
+  max-height: 40px;
+  width: 40px;
+  text-align: center;
+  opacity: .3; }
+  div.create[_ngcontent-lkm-4]   i[_ngcontent-lkm-4] {
+    position: relative;
+    top: -3px;
+    font-weight: bold;
+    font-size: 35px; }
+  div.create[_ngcontent-lkm-4]:hover {
+    opacity: .6; }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body style="margin: 0px; padding: 0px;">
+  <app-root _nghost-lkm-1=""><router-outlet _ngcontent-lkm-1=""></router-outlet><puppies-list _nghost-lkm-3=""><puppies-header _ngcontent-lkm-3="" _nghost-lkm-4=""><nav _ngcontent-lkm-4="">
+	<div _ngcontent-lkm-4="" class="upper-logo">
+		<div _ngcontent-lkm-4="" class="logo-image"></div>
+		<span _ngcontent-lkm-4="">PuppyStay</span>
+	</div>
+
+	<a _ngcontent-lkm-4="" routerlink="/puppies/create" routerlinkactive="active" ng-reflect-router-link="/puppies/create" ng-reflect-router-link-active="active" ng-reflect-href="/puppies/create" href="http://localhost:4200/puppies/create">
+		<div _ngcontent-lkm-4="" class="create">
+			<i _ngcontent-lkm-4="" class="material-icons search-icon">add</i>
+		</div>
+	</a>
+
+</nav>
+</puppies-header>
+<!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+<div _ngcontent-lkm-3="" class="body">
+	<div _ngcontent-lkm-3="" class="body-inner">
+		<div _ngcontent-lkm-3="" class="body-section list">
+			<div _ngcontent-lkm-3="" class="body-section-inner">
+				<div _ngcontent-lkm-3="" class="search">
+					<i _ngcontent-lkm-3="" class="material-icons search-icon">search</i>
+					<input _ngcontent-lkm-3="" name="search" type="text">
+				</div>
+
+			</div>
+		</div>
+		<div _ngcontent-lkm-3="" class="body-section single" id="child-route" style="display: none;">
+			<div _ngcontent-lkm-3="" class="body-section-inner">
+				<a _ngcontent-lkm-3="" routerlink="/puppies" routerlinkactive="active" ng-reflect-router-link="/puppies" ng-reflect-router-link-active="active" ng-reflect-href="/puppies" href="http://localhost:4200/puppies" class="active">
+					<div _ngcontent-lkm-3="" class="close">X</div>
+				</a>
+				<router-outlet _ngcontent-lkm-3=""></router-outlet><puppies-main _nghost-lkm-6=""></puppies-main>
+			</div>
+		</div>
+	</div>
+</div></puppies-list></app-root>
+<script type="text/javascript" src="./Puppystay_files/inline.js"></script><script type="text/javascript" src="./Puppystay_files/styles.bundle.js"></script><script type="text/javascript" src="./Puppystay_files/main.bundle.js"></script>
+
+</body></html>

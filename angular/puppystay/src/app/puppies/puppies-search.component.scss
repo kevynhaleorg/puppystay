@@ -1,0 +1,30 @@
+@import '../colors';
+
+div.search {
+	i {
+		position: absolute;
+	    top: 8px;
+	    left: 10px;
+	    font-size: 30px;
+	    color: #7b8b5c;
+	}
+	input {
+		width: calc(100% - 40px);
+		border:0px;
+		border-bottom: 1px solid $d3;
+		padding: 0px;
+		height:35px;
+		padding-left: 40px;
+		outline: none;
+		font-size: 30px;
+	    font-weight: 300;
+    	color: $b5;
+    	border-top-right-radius:5px;
+    	border-top-left-radius:5px;
+
+		&:focus {
+			background-color: #f1f0ef;
+		}
+	}
+
+}

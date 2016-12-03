@@ -1,0 +1,68 @@
+<puppies-header></puppies-header>
+<div *ngIf="coverall" class="coverall"></div>
+<div class="body">
+	<div class="body-inner">
+		<div class="body-section list">
+			<div class="body-section-inner">
+				<puppies-search (update)="filterUpdate($event)"></puppies-search>
+				<table class='header'>
+					<thead>
+						<tr>
+						<th>
+							<span>
+								Picture
+							</span>
+						</th>
+						<th>
+							<span>
+								Name
+							</span>
+						</th>
+						<th>
+							<span>
+								Breed
+							</span>
+						</th>
+						<th>
+							<span>
+							Owner
+							</span>
+						</th>
+						<th>
+							<span>
+							Room #
+							</span>
+						</th>
+						</tr>
+					</thead>
+				</table>
+				<div class="result-box">
+					<table>
+						<tbody>
+							<tr *ngFor="let puppy of puppies" [class.selected]="puppy.id === selectedId">
+								<a routerLink="/puppies/single/{{puppy.id}}">
+									<form >
+										<td><img class="user-puppy" src="images/{{puppy.picture}}"></td>
+										<td>{{puppy.name}}</td>
+										<td>{{puppy.breed}}</td>
+										<td>{{puppy.owner}}</td>
+										<td>{{puppy.room}}</td>
+									</form>
+								</a>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+		<div id="child-route" class="body-section single">
+			<div class="body-section-inner">
+				<a routerLink="/puppies" routerLinkActive="active">
+					<div class='close'>X</div>
+				</a>
+				<router-outlet></router-outlet>
+			</div>
+		</div>
+	</div>
+</div>
