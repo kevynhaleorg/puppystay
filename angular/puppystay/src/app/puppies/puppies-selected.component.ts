@@ -30,7 +30,7 @@ export class PuppiesSelectedComponent {
 
     this.subscription = this.route.params.subscribe(params => {
 
-    	this.getPuppy(+params['id'])
+    	//this.getPuppy(+params['id'])
     	this.getSelected(+params['id'])
 
     })
@@ -43,7 +43,7 @@ export class PuppiesSelectedComponent {
   }
 
   getPuppy(id: number): void {
-  	this.puppiesService.getPuppy(id).then(puppy => this.puppy = puppy);
+  	//this.puppiesService.getPuppy(id).then(puppy => this.puppy = puppy);
   }
   getSelected(id: number): void {
   	this.pageService.setSelected(id); 	

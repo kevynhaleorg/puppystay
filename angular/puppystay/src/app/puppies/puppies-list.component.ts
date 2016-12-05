@@ -13,7 +13,9 @@ import { PuppiesService } from './puppies.service'
 export class PuppiesListComponent {
   page: any = false;
   coverall: boolean;
-  subscription: any;
+  subscription1: any;
+  subscription2: any;
+  subscription3: any;
   puppies: Puppy[];
   selectedPuppy: Puppy;
   selectedId:number;
@@ -24,19 +26,25 @@ export class PuppiesListComponent {
   	private puppiesService: PuppiesService) {
   }
 
-  getPuppies(): void {
-  	this.puppiesService.getPuppies().then(puppies => this.puppies = puppies);
-  }
+  
 
   ngOnInit() {
-  	this.subscription = this.pageService.pageChange$.subscribe(
+  	this.subscription1 = this.pageService.pageChange$.subscribe(
       page => this.setPage(page));
 
-  	this.subscription = this.pageService.selectedChange$.subscribe(
+  	this.subscription2 = this.pageService.selectedChange$.subscribe(
       selected => this.setSelected(selected));
 
-  	this.getPuppies()
+  	this.puppiesService.getPuppies()
+      .subscribe(test => this.setPuppies())
 
+      this.subscription3 = this.puppiesService.puppiesChange$.subscribe(
+      content => this.setPuppies());
+
+  }
+
+  setPuppies(){
+  	this.puppies = this.puppiesService.retPuppies()
   }
 
   setPage(page) {
@@ -60,7 +68,7 @@ export class PuppiesListComponent {
 
   filterUpdate(filter: string) {
   	if (this.puppies != null) {
-  	  this.puppies = this.puppiesService.getPuppiesFilter(filter)
+  	  //this.puppies = this.puppiesService.getPuppiesFilter(filter)
     }
   }
 
