@@ -4,7 +4,7 @@
 http://paletton.com/#uid=52n0u0kf5mc6tvZaNqDieh-nreu
 
 ###URL:
-http://www.puppystay.kydeveloper.com
+http://puppystay.kydeveloper.com
 
 ###Hosted:
 Domain: GoDaddy
