@@ -18,7 +18,7 @@ export class PuppiesListComponent {
   subscription3: any;
   puppies: Puppy[];
   selectedPuppy: Puppy;
-  selectedId:number;
+  selectedId:string;
 
   constructor(
   	private pageService: PageService, 
@@ -53,7 +53,7 @@ export class PuppiesListComponent {
   	if (this.page == 'main') {
   		document.getElementById("child-route").style.display = "none"
   		this.coverall = false;
-  		this.selectedId = 0;
+  		this.selectedId = '';
   	}
   	else {
   		document.getElementById("child-route").style.display = "block"
@@ -61,7 +61,8 @@ export class PuppiesListComponent {
   	}
   }
 
-  setSelected(selected:number) {
+  setSelected(selected:string) {
+  	console.log(selected)
   	this.selectedId = selected
   	console.log(this.selectedId)
   }

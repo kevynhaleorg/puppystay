@@ -9,7 +9,7 @@ import {Observer} from 'rxjs/Observer';
 @Injectable()
 export class PageService {
 	page: string;
-	selectedPuppy: number;
+	selectedPuppy: string;
 
 	pageChange$: any;
 	private _pageObserver: Observer<any>;
@@ -34,12 +34,12 @@ export class PageService {
 		return this.page
 	}
 
-	setSelected(selected: number) {
+	setSelected(selected: string) {
 		this.selectedPuppy = selected
 		this._selectedObserver.next(this.selectedPuppy);
 	}
 
-	getSelected(): number {
+	getSelected(): string {
 		return this.selectedPuppy
 	}
 

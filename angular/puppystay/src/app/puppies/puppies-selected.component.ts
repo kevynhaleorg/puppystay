@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PageService } from './page.service'
 
 import { Puppy } from './puppies'
@@ -13,27 +13,36 @@ import { PuppiesService } from './puppies.service'
 export class PuppiesSelectedComponent {
 
   showSingle;
-  selected: number;
   subscription:any;
-  puppy: Puppy;
+  subscription2:any;
+  puppy: Puppy = new Puppy;
+  id: string;
+  edit:boolean = false;
 
   constructor(
   	private pageService: PageService, 
   	private route: ActivatedRoute,
-  	private puppiesService: PuppiesService) {
+  	private puppiesService: PuppiesService,
+  	private router: Router) {
   }
 
   ngOnInit() {
-  	this.showSingle = this.route
+  	
+
+    this.subscription = this.route.params.subscribe(params => {
+    	this.id = String(params['id'])
+    	this.puppiesService.getPuppy(this.id)
+    		.subscribe(test => this.setPuppy())
+    	this.pageService.setSelected(this.id); 
+
+    })
+
+    this.showSingle = this.route
   		.data
       	.subscribe(v => this.getPage(v['name']));
 
-    this.subscription = this.route.params.subscribe(params => {
-
-    	//this.getPuppy(+params['id'])
-    	this.getSelected(+params['id'])
-
-    })
+    this.subscription2 = this.puppiesService.puppyChange$.subscribe(
+      puppy => this.setPuppy());
     
 
   }
@@ -42,12 +51,18 @@ export class PuppiesSelectedComponent {
     this.pageService.setPage(page);
   }
 
-  getPuppy(id: number): void {
-  	//this.puppiesService.getPuppy(id).then(puppy => this.puppy = puppy);
+  setPuppy(){
+  	this.puppy = this.puppiesService.retPuppy()
+  	console.log(this.puppy)
   }
-  getSelected(id: number): void {
-  	this.pageService.setSelected(id); 	
+  deletePuppy(id:string){
+  	console.log(id)
+  	this.puppiesService.deletePuppy(id)
+  	.subscribe(test => this.retDelete())
   }
-
+  retDelete() {
+  	console.log('deleted')
+  	this.router.navigate(['/puppies'])
+  }
 
 }
