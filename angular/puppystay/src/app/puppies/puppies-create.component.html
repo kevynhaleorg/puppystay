@@ -1,0 +1,17 @@
+<div class="title">New Puppy</div>
+<div class="body">
+	<form (ngSubmit)="onSubmit()" #puppyForm="ngForm">
+		<div class="title-body">Picture (URL):</div>
+		<input id="picture" required [(ngModel)]="puppy.picture" name="picture">
+		<div class="title-body">Name:</div>
+		<input id="name" required [(ngModel)]="puppy.name" name="name">
+		<div class="title-body">Breed:</div>
+		<input id="breed" [(ngModel)]="puppy.breed" name="breed">
+		<div class="title-body">Owner:</div>
+		<input id="owner" required [(ngModel)]="puppy.owner" name="owner">
+		<div class="title-body">Room #:</div>
+		<input id="room" required [(ngModel)]="puppy.room" name="room">
+		<input type="submit" value="Create Puppy">
+	</form>
+
+</div>

@@ -52,17 +52,23 @@ export class PuppiesSelectedComponent {
   }
 
   setPuppy(){
+  	this.edit= false
   	this.puppy = this.puppiesService.retPuppy()
-  	console.log(this.puppy)
   }
   deletePuppy(id:string){
-  	console.log(id)
   	this.puppiesService.deletePuppy(id)
   	.subscribe(test => this.retDelete())
   }
   retDelete() {
-  	console.log('deleted')
   	this.router.navigate(['/puppies'])
+  }
+  startEdit() {
+  	this.edit = !this.edit;
+  }
+
+  onSubmit() {
+  	this.puppiesService.updatePuppy(this.puppy)
+  		.subscribe(test => this.setPuppy())
   }
 
 }

@@ -1,0 +1,70 @@
+@import '../colors';
+
+div.title {
+	font-size:40px;
+	color:$a5;
+	font-family:Indie Flower, sans-serif;
+	border-bottom:1px solid $a2;
+	padding-left:20px;
+
+	i {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+div.body {
+	padding:20px;
+	position: relative;
+	font-family: sans-serif;
+	height: 425px;
+	overflow: scroll;
+
+	img {
+		margin: 20px auto;
+		width: 150px;
+		display:block;
+		    box-shadow: 0px 0px 10px black;
+	}
+
+	div.title-body {
+		font-size:25px;
+		color:$a2;
+		border-bottom:1px solid $a1;
+		margin-top:15px;
+		overflow:scroll;
+
+	}
+	div.value-body {
+		padding: 5px 0px;
+	}
+	input {
+		margin-top: 5px;
+	    height: 20px;
+	    width: 100%;
+	    padding: 5px;
+	    font-size: 15px;
+	    width: calc(100% - 12px);
+	    outline: none;
+
+	    &[type='submit'] {
+	    	width: 100%;
+		    padding: 5px;
+		    margin-top: 20px;
+		    border-radius: 0px;
+		    background-color: #afc683;
+		    color: white;
+		    font-family: Indie Flower, Sans-serif;
+		    font-size: 20px;
+		    height: 40px;
+		    border: none;
+
+		    &:hover {
+		    	background-color:$a3;
+		    	cursor:pointer;
+		    }
+	    }
+	}
+
+}

@@ -14,18 +14,12 @@ app.use(cors())
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://node:123@jello.modulusmongo.net:27017/aguR2avo'); // connect to our database
 
-
 // Import mongoose chemas
 var Puppy       = require('./models/puppy');
-
-
-
-
 
 // Routes
 
 var router = express.Router();              
-
 
 // Return All, Create
 router.route('/puppies')
@@ -37,7 +31,7 @@ router.route('/puppies')
         puppy.name = req.body.name;
         puppy.owner = req.body.owner;
         puppy.room = req.body.room;
-        puppy.breed = req.body.breen;
+        puppy.breed = req.body.breed;
         puppy.picture = req.body.picture;
 
         puppy.save(function(err) {
@@ -80,7 +74,7 @@ router.route('/puppies/:id')
             puppy.name = req.body.name;
 	        puppy.owner = req.body.owner;
 	        puppy.room = req.body.room;
-	        puppy.breed = req.body.breen;
+	        puppy.breed = req.body.breed;
 	        puppy.picture = req.body.picture; 
 
             

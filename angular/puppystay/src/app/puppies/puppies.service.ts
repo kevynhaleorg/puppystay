@@ -16,8 +16,8 @@ import 'rxjs/add/operator/toPromise';
 import {Observer} from 'rxjs/Observer';
 
 import { Puppy } from './puppies'
-import { PUPPIES } from './mock-puppies'
 
+	
 
 
 @Injectable()
@@ -94,11 +94,11 @@ export class PuppiesService {
 	                	)
 	}
 	updatePuppy(puppy:Puppy) {
-		let url =  "http://puppystay.kydeveloper.com:8123/api/puppies/" + puppy.id
+		let url =  "http://puppystay.kydeveloper.com:8123/api/puppies/" + puppy._id
 		let bodyString = JSON.stringify(puppy);
 		let headers    = new Headers({'Content-Type': 'application/json'})
 		let options    = new RequestOptions({ headers: headers })			
-		return this.http.post(url, bodyString, options)
+		return this.http.put(url, bodyString, options)
 			.map(response => this.getPuppies()
 	                		.subscribe()
 	                	)

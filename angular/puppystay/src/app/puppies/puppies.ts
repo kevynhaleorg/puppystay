@@ -1,5 +1,5 @@
 export class Puppy {
-	id: number;
+	_id: number;
 	name: string;
 	picture: string;
 	breed: string;

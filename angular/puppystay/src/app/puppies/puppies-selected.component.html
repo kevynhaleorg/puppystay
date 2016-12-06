@@ -1,4 +1,37 @@
 <div class="title">{{puppy.name}}
-	<i class="material-icons">edit</i>
+	<i *ngIf="!edit" class="material-icons" (click)="startEdit()">edit</i>
+	<i *ngIf="edit" class="material-icons" (click)="startEdit()">cancel</i>
 	<i class="material-icons" (click)="deletePuppy(puppy._id)">delete</i>
+</div>
+<div *ngIf="!edit" class="body">
+	<img src="{{puppy.picture}}">
+	<div class="title-body">Name:</div>
+	<div class="value-body">{{puppy.name}}</div>
+	<div class="title-body">Breed:</div>
+	<div class="value-body">{{puppy.breed}}</div>
+	<div class="title-body">Owner:</div>
+	<div class="value-body">{{puppy.owner}}</div>
+	<div class="title-body">Room #:</div>
+	<div class="value-body">{{puppy.room}}</div>
+	<form>
+
+
+	</form>
+
+</div>
+<div *ngIf="edit" class="body">
+	<form (ngSubmit)="onSubmit()" #puppyForm="ngForm">
+		<div class="title-body">Picture (URL):</div>
+		<input id="picture" required [(ngModel)]="puppy.picture" name="picture">
+		<div class="title-body">Name:</div>
+		<input id="name" required [(ngModel)]="puppy.name" name="name">
+		<div class="title-body">Breed:</div>
+		<input id="breed" [(ngModel)]="puppy.breed" name="breed">
+		<div class="title-body">Owner:</div>
+		<input id="owner" required [(ngModel)]="puppy.owner" name="owner">
+		<div class="title-body">Room #:</div>
+		<input id="room" required [(ngModel)]="puppy.room" name="room">
+		<input type="submit" value="Save Changes">
+	</form>
+
 </div>
