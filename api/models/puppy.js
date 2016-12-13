@@ -12,4 +12,8 @@ var PuppySchema  = new Schema({
 
 });
 
+PuppySchema.methods.bark = function bark() {
+	return 'My owner is ' + this.owner
+}
+
 module.exports = mongoose.model('Puppy', PuppySchema);

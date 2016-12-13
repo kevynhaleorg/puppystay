@@ -40,7 +40,7 @@ export class PuppiesService {
 	}
 
 	getPuppies(): Observable<any> {
-		let url =  "http://puppystay.kydeveloper.com:8123/api/puppies"
+		let url =  "http://localhost:8123/api/puppies"
 		let headers    = new Headers({'Content-Type': 'application/json'})
 		let options    = new RequestOptions({ headers: headers })			
 		return this.http.get(url, options)
@@ -56,7 +56,7 @@ export class PuppiesService {
 
 	getPuppy(id: string): Observable<any> {
 		console.log(id)
-		let url = "http://puppystay.kydeveloper.com:8123/api/puppies/" + id
+		let url = "http://localhost:8123/api/puppies/" + id
 	    let headers    = new Headers({'Content-Type': 'application/json'})
 		let options    = new RequestOptions({ headers: headers })		
 		console.log(options)	
@@ -74,7 +74,7 @@ export class PuppiesService {
 
 
 	deletePuppy(id) {
-		let url = "http://puppystay.kydeveloper.com:8123/api/puppies/" + id
+		let url = "http://localhost:8123/api/puppies/" + id
 	    let headers    = new Headers({'Content-Type': 'application/json'})
 	    let options    = new RequestOptions({ headers: headers })	
 
@@ -84,7 +84,7 @@ export class PuppiesService {
 	                	)
 	}
 	createPuppy(puppy:Puppy) {
-		let url =  "http://puppystay.kydeveloper.com:8123/api/puppies"
+		let url =  "http://localhost:8123/api/puppies"
 		let bodyString = JSON.stringify(puppy);
 		let headers    = new Headers({'Content-Type': 'application/json'})
 		let options    = new RequestOptions({ headers: headers })			
@@ -94,7 +94,7 @@ export class PuppiesService {
 	                	)
 	}
 	updatePuppy(puppy:Puppy) {
-		let url =  "http://puppystay.kydeveloper.com:8123/api/puppies/" + puppy._id
+		let url =  "http://localhost:8123/api/puppies/" + puppy._id
 		let bodyString = JSON.stringify(puppy);
 		let headers    = new Headers({'Content-Type': 'application/json'})
 		let options    = new RequestOptions({ headers: headers })			
@@ -104,7 +104,30 @@ export class PuppiesService {
 	                	)
 	}
 
-	getPuppiesFilter(filter: string) {
+	getPuppiesFilter(filter: string, puppies: Puppy[]) {
+		var result = []
+		var value, include
+		console.log(filter)
+		puppies.forEach( function(item) {
+			include = false
+			console.log(item)
+			for (var key in item) {
+
+				if (key == 'name'){
+					value = String(item[key])
+					console.log(value)
+					if (value.indexOf(filter) !== -1) {
+						include = true
+					}
+
+				}
+
+			}
+			if (include) {
+				result.push(item)
+			}
+		});
+		return result
 
 	}
 }

@@ -5,6 +5,8 @@ import { PageService } from './page.service'
 import { Puppy } from './puppies'
 import { PuppiesService } from './puppies.service'
 
+import { PuppiesFilterPipe } from '../puppies-filter.pipe'
+
 @Component({
   selector: 'puppies-list',
   templateUrl: './puppies-list.component.html',
@@ -19,11 +21,12 @@ export class PuppiesListComponent {
   puppies: Puppy[];
   selectedPuppy: Puppy;
   selectedId:string;
+  filterpuppies: Puppy[]
 
   constructor(
   	private pageService: PageService, 
   	private route: ActivatedRoute,
-  	private puppiesService: PuppiesService) {
+  	private puppiesService: PuppiesService,) {
   }
 
   
@@ -45,6 +48,7 @@ export class PuppiesListComponent {
 
   setPuppies(){
   	this.puppies = this.puppiesService.retPuppies()
+    this.filterpuppies = this.puppies
   }
 
   setPage(page) {
@@ -68,9 +72,14 @@ export class PuppiesListComponent {
   }
 
   filterUpdate(filter: string) {
+    console.log(filter)
+
   	if (this.puppies != null) {
-  	  //this.puppies = this.puppiesService.getPuppiesFilter(filter)
+  	  
+    this.filterpuppies = new PuppiesFilterPipe().transform(this.puppies, filter);
+    console.log(this.filterpuppies, this.puppies)
     }
+
   }
 
 }

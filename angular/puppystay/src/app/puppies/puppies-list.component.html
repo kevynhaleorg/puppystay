@@ -39,7 +39,7 @@
 				<div class="result-box">
 					<table>
 						<tbody>
-							<tr *ngFor="let puppy of puppies" [class.selected]="puppy._id === selectedId">
+							<tr *ngFor="let puppy of filterpuppies" [class.selected]="puppy._id === selectedId">
 								<a routerLink="/puppies/single/{{puppy._id}}">
 									<form >
 										<td><img class="user-puppy" src="{{puppy.picture}}"></td>

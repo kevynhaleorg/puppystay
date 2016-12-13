@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { FrontComponent } from './front.component';
 
 // Import Modules
-import { PuppiesModule } from './puppies/puppies.module'
+import { PuppiesModule } from './puppies/puppies.module';
+import { PuppiesFilterPipe } from './puppies-filter.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
-    FrontComponent
+    FrontComponent,
+    PuppiesFilterPipe
   ],
   imports: [
     BrowserModule,

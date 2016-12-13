@@ -58,6 +58,7 @@ router.route('/puppies/:id')
 
     .get(function(req, res) {
         Puppy.findById(req.params.id, function(err, puppy) {
+            console.log(puppy.bark())
             if (err)
                 res.send(err);
             res.json(puppy);
